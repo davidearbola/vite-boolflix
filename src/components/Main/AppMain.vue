@@ -23,22 +23,50 @@ export default {
 		<div class="d-flex">
 			<div v-if="!Store.inputValue">
 				<div v-for="film in Store.popularMovie">
-					{{ film.title }}
+					<img :src="MyFunction.getImg(film)" />
+					<h5>{{ film.title }}</h5>
+					<p v-if="film.title != film.original_title">
+						{{ film.original_title }}
+					</p>
+					<p>{{ film.original_language }}</p>
+					<p>{{ film.vote_average }}</p>
 				</div>
 			</div>
 			<div v-if="!Store.inputValue">
 				<div v-for="film in Store.topRatedMovie">
-					{{ film.title }}
+					<img :src="MyFunction.getImg(film)" />
+					<h5>{{ film.title }}</h5>
+					<p v-if="film.title != film.original_title">
+						{{ film.original_title }}
+					</p>
+					<p>{{ film.original_language }}</p>
+					<p>{{ film.vote_average }}</p>
 				</div>
 			</div>
 			<div v-if="!Store.inputValue">
 				<div v-for="film in Store.upComingMovie">
-					{{ film.title }}
+					<img :src="MyFunction.getImg(film)" />
+					<h5>{{ film.title }}</h5>
+					<p v-if="film.title != film.original_title">
+						{{ film.original_title }}
+					</p>
+					<p>{{ film.original_language }}</p>
+					<p>{{ film.vote_average }}</p>
 				</div>
 			</div>
 			<div>
 				<div v-for="film in Store.searchMovie">
-					{{ film.title }}
+					<img :src="MyFunction.getImg(film)" />
+					<h5>{{ film.title }}</h5>
+					<p v-if="film.title != film.original_title">
+						{{ film.original_title }}
+					</p>
+					<p>{{ film.name }}</p>
+					<p v-if="film.name != film.original_name">
+						{{ film.original_name }}
+					</p>
+					<p>{{ film.original_language }}</p>
+					<p>{{ film.vote_average }}</p>
 				</div>
 			</div>
 		</div>
