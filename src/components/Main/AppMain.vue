@@ -1,9 +1,19 @@
 <script>
 import MyFunction from "../../helpers/function.js";
 import Store from "../../data/store.js";
+import Popular from "./Popular.vue";
+import TopRated from "./TopRated.vue";
+import UpComing from "./UpComing.vue";
+import Search from "./Search.vue";
 
 export default {
 	name: "AppMain",
+	components: {
+		Popular,
+		TopRated,
+		UpComing,
+		Search,
+	},
 	data() {
 		return {
 			MyFunction,
@@ -20,56 +30,10 @@ export default {
 
 <template>
 	<main>
-		<div class="d-flex">
-			<div v-if="!Store.inputValue">
-				<div v-for="film in Store.popularMovie">
-					<img :src="MyFunction.getImg(film)" />
-					<h5>{{ film.title }}</h5>
-					<p v-if="film.title != film.original_title">
-						{{ film.original_title }}
-					</p>
-					<p>{{ film.original_language }}</p>
-					<p>{{ film.vote_average }}</p>
-				</div>
-			</div>
-			<div v-if="!Store.inputValue">
-				<div v-for="film in Store.topRatedMovie">
-					<img :src="MyFunction.getImg(film)" />
-					<h5>{{ film.title }}</h5>
-					<p v-if="film.title != film.original_title">
-						{{ film.original_title }}
-					</p>
-					<p>{{ film.original_language }}</p>
-					<p>{{ film.vote_average }}</p>
-				</div>
-			</div>
-			<div v-if="!Store.inputValue">
-				<div v-for="film in Store.upComingMovie">
-					<img :src="MyFunction.getImg(film)" />
-					<h5>{{ film.title }}</h5>
-					<p v-if="film.title != film.original_title">
-						{{ film.original_title }}
-					</p>
-					<p>{{ film.original_language }}</p>
-					<p>{{ film.vote_average }}</p>
-				</div>
-			</div>
-			<div>
-				<div v-for="film in Store.searchMovie">
-					<img :src="MyFunction.getImg(film)" />
-					<h5>{{ film.title }}</h5>
-					<p v-if="film.title != film.original_title">
-						{{ film.original_title }}
-					</p>
-					<p>{{ film.name }}</p>
-					<p v-if="film.name != film.original_name">
-						{{ film.original_name }}
-					</p>
-					<p>{{ film.original_language }}</p>
-					<p>{{ film.vote_average }}</p>
-				</div>
-			</div>
-		</div>
+		<Popular />
+		<TopRated />
+		<UpComing />
+		<Search />
 	</main>
 </template>
 
