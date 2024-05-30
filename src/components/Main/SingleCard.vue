@@ -1,5 +1,6 @@
 <script>
 import MyFunction from "../../helpers/function.js";
+import Store from "../../data/store.js";
 
 export default {
 	name: "Popular",
@@ -7,6 +8,7 @@ export default {
 	data() {
 		return {
 			MyFunction,
+			Store,
 		};
 	},
 };
@@ -20,6 +22,16 @@ export default {
 	</p>
 	<p class="mb-0">{{ elemento.original_language }}</p>
 	<p class="mb-0">{{ Math.floor(elemento.vote_average / 2 + 1) }}</p>
+	<span v-for="star in Store.stars"
+		><i
+			:class="
+				star <= Math.floor(elemento.vote_average / 2 + 1)
+					? 'fa-solid'
+					: 'fa-regular'
+			"
+			class="fa-star"
+		></i
+	></span>
 </template>
 
 <style scoped>
@@ -28,5 +40,8 @@ p {
 }
 img {
 	width: 250px;
+}
+i {
+	color: yellow;
 }
 </style>
