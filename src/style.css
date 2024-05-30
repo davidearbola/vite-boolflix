@@ -2,3 +2,11 @@
 	width: 200px;
 	aspect-ratio: 3/4;
 }
+.my_bar::-webkit-scrollbar {
+	height: 6px;
+	width: 4px;
+}
+.my_bar::-webkit-scrollbar-thumb:horizontal {
+	background: #000;
+	border-radius: 10px;
+}

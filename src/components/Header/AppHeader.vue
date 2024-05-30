@@ -15,20 +15,31 @@ export default {
 
 <template>
 	<header>
-		<nav class="d-flex justify-content-around">
-			<h5>Boolflix</h5>
-			<span>Home</span>
-			<span>Film</span>
-			<span>Serie Tv</span>
-			<span>Generi</span>
-			<input
-				type="text"
-				v-model="Store.inputValue"
-				@input="MyFunction.getSearchMovie()"
-			/>
-			<button>Cerca</button>
+		<nav class="row justify-content-between align-items-center p-3 m-0">
+			<div class="col-2">
+				<h3 class="mb-0 text-danger">Boolflix</h3>
+			</div>
+			<div class="col-6 d-flex justify-content-center gap-3">
+				<span>Home</span>
+				<span>Film</span>
+				<span>Serie Tv</span>
+				<span>Generi</span>
+			</div>
+			<div class="col-3 text-end">
+				<input
+					type="text"
+					v-model="Store.inputValue"
+					@input="MyFunction.getSearchMovie()"
+				/>
+				<button>Cerca</button>
+			</div>
 		</nav>
 	</header>
 </template>
 
-<style scoped></style>
+<style scoped>
+nav {
+	background-color: black;
+	color: white;
+}
+</style>

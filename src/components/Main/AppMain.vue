@@ -37,4 +37,9 @@ export default {
 	</main>
 </template>
 
-<style scoped></style>
+<style scoped>
+main {
+	background-color: #222;
+	color: white;
+}
+</style>
