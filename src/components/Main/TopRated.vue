@@ -19,8 +19,9 @@ export default {
 
 <template>
 	<h4 v-if="!Store.inputValue">I Film più votati</h4>
-	<div v-if="!Store.inputValue" class="d-flex overflow-x-auto">
+	<div v-if="!Store.inputValue" class="d-flex overflow-x-auto mb-3">
 		<div v-for="film in Store.topRatedMovie" class="mx-2">
+			<img class="my_img" :src="MyFunction.getImg(film)" />
 			<SingleCard :elemento="film" />
 		</div>
 	</div>

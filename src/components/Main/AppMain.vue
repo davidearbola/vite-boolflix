@@ -29,7 +29,7 @@ export default {
 </script>
 
 <template>
-	<main>
+	<main class="p-3">
 		<Popular />
 		<TopRated />
 		<UpComing />

@@ -18,12 +18,20 @@ export default {
 </script>
 
 <template>
-	<h4>Trovati {{ Store.searchMovie.length }} risultati</h4>
-	<div class="d-flex overflow-x-auto">
-		<div v-for="film in Store.searchMovie">
+	<h4 v-if="Store.inputValue">
+		Trovati {{ Store.searchMovie.length }} risultati
+	</h4>
+	<div class="row">
+		<div v-for="film in Store.searchMovie" class="col-2">
+			<img :src="MyFunction.getImg(film)" />
 			<SingleCard :elemento="film" />
 		</div>
 	</div>
 </template>
 
-<style scoped></style>
+<style scoped>
+img {
+	width: 100%;
+	aspect-ratio: 9/16;
+}
+</style>
