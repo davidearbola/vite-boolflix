@@ -40,6 +40,10 @@ export default {
 			></i
 		></span>
 	</div>
+	<div>
+		<p v-if="elemento.name">Serie TV</p>
+		<p v-if="elemento.title">Film</p>
+	</div>
 </template>
 
 <style scoped>
