@@ -21,18 +21,23 @@ export default {
 <template>
 	<main>
 		<div class="d-flex">
-			<div>
+			<div v-if="!Store.inputValue">
 				<div v-for="film in Store.popularMovie">
 					{{ film.title }}
 				</div>
 			</div>
-			<div>
+			<div v-if="!Store.inputValue">
 				<div v-for="film in Store.topRatedMovie">
 					{{ film.title }}
 				</div>
 			</div>
-			<div>
+			<div v-if="!Store.inputValue">
 				<div v-for="film in Store.upComingMovie">
+					{{ film.title }}
+				</div>
+			</div>
+			<div>
+				<div v-for="film in Store.searchMovie">
 					{{ film.title }}
 				</div>
 			</div>
