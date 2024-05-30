@@ -74,6 +74,19 @@ const myFunction = {
 	getImg(elemento) {
 		return `https://image.tmdb.org/t/p/w500${elemento.poster_path}`;
 	},
+	getFlag(language) {
+		if (language == "en") {
+			return `https://flagsapi.com/GB/flat/16.png`;
+		} else if (language == "it") {
+			return `https://flagsapi.com/IT/flat/16.png`;
+		} else if (language == "ja") {
+			return `https://flagsapi.com/JP/flat/16.png`;
+		} else if (language == "fr") {
+			return `https://flagsapi.com/FR/flat/16.png`;
+		} else {
+			return language;
+		}
+	},
 };
 
 export default myFunction;

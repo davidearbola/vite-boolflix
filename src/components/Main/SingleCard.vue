@@ -28,7 +28,7 @@ export default {
 		</p>
 	</div>
 	<div>
-		<span class="me-2">{{ elemento.original_language }}</span>
+		<img :src="MyFunction.getFlag(elemento.original_language)" />
 		<span v-for="star in Store.stars"
 			><i
 				:class="
