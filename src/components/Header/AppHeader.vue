@@ -1,6 +1,12 @@
 <script>
+import Store from "../../data/store.js";
 export default {
 	name: "AppHeader",
+	data() {
+		return {
+			Store,
+		};
+	},
 };
 </script>
 
@@ -12,7 +18,7 @@ export default {
 			<span>Film</span>
 			<span>Serie Tv</span>
 			<span>Generi</span>
-			<input type="text" />
+			<input type="text" v-model="Store.inputValue" />
 			<button>Cerca</button>
 		</nav>
 	</header>
