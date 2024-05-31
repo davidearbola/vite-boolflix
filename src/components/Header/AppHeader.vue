@@ -41,5 +41,6 @@ export default {
 nav {
 	background-color: black;
 	color: white;
+	height: 4rem;
 }
 </style>

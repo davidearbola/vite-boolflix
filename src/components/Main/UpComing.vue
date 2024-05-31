@@ -23,10 +23,11 @@ export default {
 		v-if="!Store.inputValue"
 		class="d-flex overflow-x-auto mb-3 pb-3 my_bar"
 	>
-		<div v-for="film in Store.upComingMovie" class="mx-2">
-			<img class="my_img" :src="MyFunction.getImg(film)" />
-			<SingleCard :elemento="film" />
-		</div>
+		<template v-for="(film, i) in Store.upComingMovie">
+			<div class="d-flex flex-column mx-2">
+				<SingleCard :elemento="film" :array="Store.upComingMovie[i]" />
+			</div>
+		</template>
 	</div>
 </template>
 

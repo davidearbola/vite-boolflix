@@ -22,10 +22,11 @@ export default {
 		Trovati {{ Store.searchMovie.length }} risultati
 	</h4>
 	<div class="row">
-		<div v-for="film in Store.searchMovie" class="col-2">
-			<img :src="MyFunction.getImg(film)" />
-			<SingleCard :elemento="film" />
-		</div>
+		<template v-for="(film, i) in Store.searchMovie">
+			<div class="col-2">
+				<SingleCard :elemento="film" :array="Store.searchMovie[i]" />
+			</div>
+		</template>
 	</div>
 </template>
 

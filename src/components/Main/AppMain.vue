@@ -29,7 +29,7 @@ export default {
 </script>
 
 <template>
-	<main class="p-3">
+	<main class="p-3 my_bar">
 		<Popular />
 		<TopRated />
 		<UpComing />
@@ -41,5 +41,7 @@ export default {
 main {
 	background-color: #222;
 	color: white;
+	height: calc(100vh - 4rem);
+	overflow: auto;
 }
 </style>

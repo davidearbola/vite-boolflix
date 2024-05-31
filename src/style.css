@@ -10,3 +10,7 @@
 	background: #000;
 	border-radius: 10px;
 }
+.my_bar::-webkit-scrollbar-thumb:vertical {
+	background: #000;
+	border-radius: 10px;
+}

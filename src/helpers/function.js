@@ -2,10 +2,10 @@ import axios from "axios";
 import Store from "../data/store.js";
 
 const myFunction = {
-	getPopularMovie: function () {
+	getPopularMovie: function (nome, array) {
 		const options = {
 			method: "GET",
-			url: "https://api.themoviedb.org/3/movie/popular",
+			url: `https://api.themoviedb.org/3/movie/popular`,
 			params: { language: "en-US", page: "1" },
 			headers: {
 				accept: "application/json",
@@ -16,6 +16,7 @@ const myFunction = {
 
 		axios.request(options).then((response) => {
 			Store.popularMovie = response.data.results;
+			console.log(Store.popularMovie);
 		});
 	},
 	getTopRatedMovie: function () {
@@ -71,8 +72,9 @@ const myFunction = {
 			Store.searchMovie = response.data.results;
 		});
 	},
+
 	getImg(elemento) {
-		return `https://image.tmdb.org/t/p/w500${elemento.poster_path}`;
+		return `https://image.tmdb.org/t/p/w500${elemento}`;
 	},
 	getFlag(language) {
 		if (language == "en") {
