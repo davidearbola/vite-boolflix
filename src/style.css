@@ -14,3 +14,11 @@
 	background: #000;
 	border-radius: 10px;
 }
+
+.fa-xmark {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	font-size: 2rem;
+	z-index: 999;
+}

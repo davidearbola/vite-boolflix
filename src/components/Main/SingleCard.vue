@@ -4,12 +4,22 @@ import Store from "../../data/store.js";
 
 export default {
 	name: "SingleCard",
-	props: ["elemento", "array"],
+	props: ["elemento"],
 	data() {
 		return {
 			MyFunction,
 			Store,
 		};
+	},
+	methods: {
+		visibleInfo(index) {
+			this.active = index;
+			this.visible = true;
+		},
+		notVisibleInfo() {
+			this.active = "";
+			this.visible = false;
+		},
 	},
 };
 </script>
@@ -51,44 +61,6 @@ export default {
 			<p v-if="elemento.name">Serie TV</p>
 			<p v-if="elemento.title">Film</p>
 		</div>
-		<!-- click  -->
-		<div class="info p-3">
-			<div class="box d-flex gap-3">
-				<div class="col-auto">
-					<img
-						class="backdrop"
-						:src="MyFunction.getImg(array.backdrop_path)"
-					/>
-					<h5>{{ array.title }}</h5>
-					<h5>{{ array.name }}</h5>
-				</div>
-				<div class="col-4">
-					<p class="fs_small">{{ array.overview }}</p>
-					<span class="fs_small"
-						>Release: {{ array.release_date }}</span
-					><br />
-					<span
-						>Lingua:
-						<img
-							:src="
-								MyFunction.getFlag(array.original_language)
-							" /></span
-					><br />
-					<span v-for="star in Store.stars"
-						><i
-							:class="
-								star <= Math.floor(array.vote_average / 2 + 1)
-									? 'fa-solid'
-									: 'fa-regular'
-							"
-							class="fa-star"
-						></i
-					></span>
-					<p v-if="elemento.name">Serie TV</p>
-					<p v-if="elemento.title">Film</p>
-				</div>
-			</div>
-		</div>
 	</div>
 </template>
 
@@ -98,30 +70,5 @@ p {
 }
 .fa-star {
 	color: yellow;
-}
-.info {
-	display: none;
-	width: 100%;
-	background-color: rgba(2, 2, 2, 0.9);
-	position: fixed;
-	top: 4rem;
-	left: 0;
-	z-index: 999;
-}
-
-.fs_small {
-	font-size: 12px;
-}
-
-.box {
-	width: 100%;
-}
-
-.backdrop {
-	max-width: 250px;
-}
-
-.box_hover:hover .info {
-	display: block;
 }
 </style>

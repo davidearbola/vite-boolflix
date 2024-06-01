@@ -5,6 +5,7 @@ import Popular from "./Popular.vue";
 import TopRated from "./TopRated.vue";
 import UpComing from "./UpComing.vue";
 import Search from "./Search.vue";
+import FilmGenere from "./FilmGenere.vue";
 
 export default {
 	name: "AppMain",
@@ -13,6 +14,7 @@ export default {
 		TopRated,
 		UpComing,
 		Search,
+		FilmGenere,
 	},
 	data() {
 		return {
@@ -25,9 +27,10 @@ export default {
 
 <template>
 	<main class="p-3 my_bar">
-		<Popular />
-		<TopRated />
-		<UpComing />
+		<FilmGenere />
+		<Popular v-if="Store.activeSearch == 'Home'" />
+		<TopRated v-if="Store.activeSearch == 'Home'" />
+		<UpComing v-if="Store.activeSearch == 'Home'" />
 		<Search />
 	</main>
 </template>

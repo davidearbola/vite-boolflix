@@ -6,7 +6,7 @@ import InfoCard from "./InfoCard.vue";
 import axios from "axios";
 
 export default {
-	name: "TopRated",
+	name: "Search",
 	components: {
 		SingleCard,
 		InfoCard,
@@ -43,37 +43,31 @@ export default {
 			this.visible = false;
 		},
 	},
-	created() {
-		this.MyFunction.getHomeMovie(Store.topRated, "topRatedMovie");
-	},
 };
 </script>
 
 <template>
-	<h4 v-if="!Store.inputValue">I Film più votati</h4>
-	<div
-		v-if="!Store.inputValue"
-		class="d-flex overflow-x-auto mb-3 pb-3 my_bar"
-	>
-		<template v-for="(film, i) in Store.topRatedMovie">
-			<div
-				class="d-flex flex-column mx-2"
-				@click="visibleInfo(i, Store.topRatedMovie[i].id)"
-			>
+	<h4 v-if="Store.activeSearch != 'Home'">
+		Trovati {{ Store.searchGenre.length }} risultati
+	</h4>
+	<div v-if="Store.activeSearch != 'Home'" class="row">
+		<template v-for="(film, i) in Store.searchGenre">
+			<div class="col-2" @click="visibleInfo(i, Store.searchGenre[i].id)">
 				<SingleCard :elemento="film" />
 			</div>
 			<InfoCard
 				v-if="visible"
-				:elemento="Store.topRatedMovie[active]"
+				:elemento="Store.searchGenre[active]"
 				:cast="Store.credits"
 			/>
-			<i
-				v-if="visible"
-				class="fa-solid fa-xmark"
-				@click="notVisibleInfo()"
-			></i>
 		</template>
 	</div>
+	<i v-if="visible" class="fa-solid fa-xmark" @click="notVisibleInfo()"></i>
 </template>
 
-<style scoped></style>
+<style scoped>
+.col-2 img {
+	width: 100%;
+	aspect-ratio: 9/16;
+}
+</style>

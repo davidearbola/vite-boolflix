@@ -10,6 +10,10 @@ export default {
 			MyFunction,
 		};
 	},
+	methods: {},
+	created() {
+		MyFunction.getGenreList();
+	},
 };
 </script>
 
@@ -20,10 +24,19 @@ export default {
 				<h3 class="mb-0 text-danger">Boolflix</h3>
 			</div>
 			<div class="col-6 d-flex justify-content-center gap-3">
-				<span>Home</span>
-				<span>Film</span>
-				<span>Serie Tv</span>
-				<span>Generi</span>
+				<span @click="Store.activeSearch = 'Home'">Home</span>
+
+				<span id="film" class="position-relative"
+					>Generi <i class="fa-solid fa-chevron-down"></i>
+					<div>
+						<span
+							v-for="(genre, i) in Store.filmGenreList"
+							@click="MyFunction.getFilmByGenre(i)"
+							class="col-3"
+							>{{ genre.name }}</span
+						>
+					</div></span
+				>
 			</div>
 			<div class="col-3 text-end">
 				<input
@@ -42,5 +55,17 @@ nav {
 	background-color: black;
 	color: white;
 	height: 4rem;
+}
+
+#film div {
+	display: none;
+}
+#film:hover div {
+	display: flex;
+	flex-wrap: wrap;
+	width: 500px;
+	background-color: black;
+	position: absolute;
+	padding: 1rem;
 }
 </style>
