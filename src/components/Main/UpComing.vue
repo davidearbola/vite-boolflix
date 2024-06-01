@@ -14,6 +14,9 @@ export default {
 			MyFunction,
 		};
 	},
+	created() {
+		this.MyFunction.getHomeMovie(Store.upComing, "upComingMovie");
+	},
 };
 </script>
 

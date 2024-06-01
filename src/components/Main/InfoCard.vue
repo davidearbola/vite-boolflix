@@ -1,20 +1,20 @@
 <script>
-import MyFunction from "../../helpers/function.js";
-import Store from "../../data/store.js";
-export default {
-	name: "InfoCard",
-	data() {
-		return {
-			MyFunction,
-			Store,
-		};
-	},
-	props: ["elemento"],
-};
+// import MyFunction from "../../helpers/function.js";
+// import Store from "../../data/store.js";
+// export default {
+// 	name: "InfoCard",
+// 	data() {
+// 		return {
+// 			MyFunction,
+// 			Store,
+// 		};
+// 	},
+// 	props: ["elemento"],
+// };
 </script>
 
 <template>
-	<div class="info p-3">
+	<!-- <div class="info p-3">
 		<div class="box">
 			<img
 				:src="MyFunction.getImg(elemento.backdrop_path)"
@@ -44,11 +44,11 @@ export default {
 			</div>
 			<i class="fa-solid fa-xmark"></i>
 		</div>
-	</div>
+	</div> -->
 </template>
 
 <style scoped>
-.info {
+/* .info {
 	height: 100vh;
 	width: 100%;
 	background-color: rgba(104, 104, 104, 0.08);
@@ -71,5 +71,5 @@ export default {
 	top: 1rem;
 	right: 1rem;
 	font-size: 2rem;
-}
+} */
 </style>

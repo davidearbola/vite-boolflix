@@ -20,11 +20,6 @@ export default {
 			Store,
 		};
 	},
-	created() {
-		this.MyFunction.getPopularMovie();
-		this.MyFunction.getTopRatedMovie();
-		this.MyFunction.getUpComingMovie();
-	},
 };
 </script>
 

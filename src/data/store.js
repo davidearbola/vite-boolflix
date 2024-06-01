@@ -3,6 +3,8 @@ import { reactive } from "vue";
 const iMieiDati = reactive({
 	popularMovie: [],
 	popular: "popular",
+	topRated: "top_rated",
+	upComing: "upcoming",
 	topRatedMovie: [],
 	upComingMovie: [],
 	searchMovie: [],
